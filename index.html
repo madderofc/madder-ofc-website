@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADDER OFC - Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background-container" class="background-container"></div>
+    
+    <!-- Audio Player -->
+    <audio id="bgMusic" loop volume="0.3">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">MADDER OFC 👑</h1>
+            <p class="subtitle">Premium Experience</p>
+        </div>
+
+        <!-- Premium Popup Box -->
+        <div class="premium-box">
+            <span class="premium-badge">💎 PREMIUM 💎</span>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid-container">
+            <!-- Box 1: YouTube -->
+            <div class="box" onclick="goToPage('youtube')">
+                <span class="box-emoji">📺</span>
+                <span class="box-label">YOUTUBER</span>
+            </div>
+
+            <!-- Box 2: Telegram -->
+            <div class="box" onclick="goToPage('telegram')">
+                <span class="box-emoji">💬</span>
+                <span class="box-label">TELEGRAM</span>
+            </div>
+
+            <!-- Box 3: Discord -->
+            <div class="box" onclick="goToPage('discord')">
+                <span class="box-emoji">🎮</span>
+                <span class="box-label">DISCORD</span>
+            </div>
+
+            <!-- Box 4: Instagram -->
+            <div class="box" onclick="goToPage('instagram')">
+                <span class="box-emoji">📸</span>
+                <span class="box-label">INSTAGRAM</span>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="grid-container">
+            <!-- Box 5: Get Free Key -->
+            <div class="box" onclick="goToPage('freekey')">
+                <span class="box-emoji">🔑</span>
+                <span class="box-label">GET FREE KEY</span>
+            </div>
+
+            <!-- Box 6: Modz Download -->
+            <div class="box" onclick="goToPage('modz')">
+                <span class="box-emoji">⬇️</span>
+                <span class="box-label">MODZ DOWNLOAD</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Pages -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
