@@ -1,4 +1,4 @@
-// Anime Background URLs (Royalty-free anime images)
+// Anime Background URLs - Anime Girl Focus
 const animeBackgrounds = [
     'https://images.unsplash.com/photo-1578482218881-bd674a39f5a6?w=1200&h=800&fit=crop',
     'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&h=800&fit=crop',
@@ -10,6 +10,7 @@ const animeBackgrounds = [
 let currentBgIndex = 0;
 const bgContainer = document.getElementById('background-container');
 const bgMusic = document.getElementById('bgMusic');
+const clockDisplay = document.getElementById('clock');
 
 // Change background every 8 seconds
 function changeBackground() {
@@ -17,10 +18,23 @@ function changeBackground() {
     bgContainer.style.backgroundImage = `url('${animeBackgrounds[currentBgIndex]}')`;
 }
 
+// Update clock
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
 // Initialize
 window.addEventListener('load', () => {
     bgContainer.style.backgroundImage = `url('${animeBackgrounds[0]}')`;
     setInterval(changeBackground, 8000);
+    
+    // Update clock every second
+    updateClock();
+    setInterval(updateClock, 1000);
     
     // Play music on user interaction
     document.addEventListener('click', () => {
@@ -70,14 +84,6 @@ function goToPage(page) {
             `;
             break;
         
-        case 'freekey':
-            content = `
-                <h2>🔑 GET FREE KEY</h2>
-                <a href="https://vplink.in/Vdax" target="_blank" class="channel-link">GET YOUR FREE KEY NOW</a>
-                <p class="channel-desc">Click above to claim your free key</p>
-            `;
-            break;
-        
         case 'modz':
             content = `
                 <h2>⬇️ MODZ DOWNLOAD</h2>
@@ -89,6 +95,18 @@ function goToPage(page) {
     
     modalBody.innerHTML = content;
     modal.style.display = 'block';
+}
+
+// Go to Key Page
+function goToKeyPage() {
+    const keyPage = document.getElementById('keyPage');
+    keyPage.style.display = 'flex';
+}
+
+// Close Key Page
+function closeKeyPage() {
+    const keyPage = document.getElementById('keyPage');
+    keyPage.style.display = 'none';
 }
 
 // Close Modal

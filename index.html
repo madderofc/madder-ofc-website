@@ -16,15 +16,26 @@
 
     <!-- Main Container -->
     <div class="container">
-        <!-- Header -->
+        <!-- Header with Clock -->
         <div class="header">
-            <h1 class="title">MADDER OFC 👑</h1>
-            <p class="subtitle">Premium Experience</p>
+            <div class="header-content">
+                <h1 class="title">MADDER OFC 👑</h1>
+                <p class="subtitle">Premium Experience</p>
+            </div>
+            <div class="clock-container" onclick="goToKeyPage()">
+                <div class="clock">
+                    <div id="clock" class="clock-display">00:00:00</div>
+                </div>
+            </div>
         </div>
 
         <!-- Premium Popup Box -->
         <div class="premium-box">
-            <span class="premium-badge">💎 PREMIUM 💎</span>
+            <div class="premium-badge">
+                <span class="diamond">💎</span>
+                <span class="premium-text">PREMIUM</span>
+                <span class="diamond">💎</span>
+            </div>
         </div>
 
         <!-- Main Content Grid -->
@@ -57,7 +68,7 @@
         <!-- Second Row -->
         <div class="grid-container">
             <!-- Box 5: Get Free Key -->
-            <div class="box" onclick="goToPage('freekey')">
+            <div class="box" onclick="goToKeyPage()">
                 <span class="box-emoji">🔑</span>
                 <span class="box-label">GET FREE KEY</span>
             </div>
@@ -75,6 +86,22 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Get Key Page -->
+    <div id="keyPage" class="key-page" style="display: none;">
+        <div class="key-container">
+            <button class="back-btn" onclick="closeKeyPage()">← BACK</button>
+            <div class="key-content">
+                <h1 class="key-title">MADDER OFC</h1>
+                <div class="key-box">
+                    <p class="key-subtitle">🔑 GET FREE KEY 🔑</p>
+                    <p class="key-description">Click below to unlock your premium access!</p>
+                    <a href="https://vplink.in/Vdax" target="_blank" class="get-key-btn">GET YOUR FREE KEY</a>
+                    <p class="key-note">Limited time offer - Grab yours now!</p>
+                </div>
+            </div>
         </div>
     </div>
 
