@@ -1,22 +1,6 @@
-// Anime Background URLs - Anime Girl Focus
-const animeBackgrounds = [
-    'https://images.unsplash.com/photo-1578482218881-bd674a39f5a6?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1542155537-c1c1fe0e0e6f?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop',
-];
-
-let currentBgIndex = 0;
+// Static Anime Background
 const bgContainer = document.getElementById('background-container');
 const bgMusic = document.getElementById('bgMusic');
-const clockDisplay = document.getElementById('clock');
-
-// Change background every 8 seconds
-function changeBackground() {
-    currentBgIndex = (currentBgIndex + 1) % animeBackgrounds.length;
-    bgContainer.style.backgroundImage = `url('${animeBackgrounds[currentBgIndex]}')`;
-}
 
 // Update clock
 function updateClock() {
@@ -29,9 +13,6 @@ function updateClock() {
 
 // Initialize
 window.addEventListener('load', () => {
-    bgContainer.style.backgroundImage = `url('${animeBackgrounds[0]}')`;
-    setInterval(changeBackground, 8000);
-    
     // Update clock every second
     updateClock();
     setInterval(updateClock, 1000);
@@ -54,7 +35,7 @@ function goToPage(page) {
     switch(page) {
         case 'youtube':
             content = `
-                <h2>📺 YOUTUBER CHANNELS</h2>
+                <h2><i class="fab fa-youtube"></i> YOUTUBER CHANNELS</h2>
                 <a href="https://www.youtube.com/@OpMmadhav" target="_blank" class="channel-link">@OpMmadhav</a>
                 <a href="https://www.youtube.com/@NxtM70" target="_blank" class="channel-link">@NxtM70</a>
             `;
@@ -62,7 +43,7 @@ function goToPage(page) {
         
         case 'telegram':
             content = `
-                <h2>💬 TELEGRAM</h2>
+                <h2><i class="fab fa-telegram"></i> TELEGRAM</h2>
                 <a href="https://t.me/OpMmadhav" target="_blank" class="channel-link">DM - @OpMmadhav</a>
                 <p class="channel-desc">CHANNEL coming soon</p>
             `;
@@ -70,7 +51,7 @@ function goToPage(page) {
         
         case 'discord':
             content = `
-                <h2>🎮 DISCORD</h2>
+                <h2><i class="fab fa-discord"></i> DISCORD</h2>
                 <p style="font-size: 1.5rem; margin-top: 30px;">Coming Soon</p>
                 <p class="channel-desc">Stay tuned for Discord server link!</p>
             `;
@@ -78,7 +59,7 @@ function goToPage(page) {
         
         case 'instagram':
             content = `
-                <h2>📸 INSTAGRAM</h2>
+                <h2><i class="fab fa-instagram"></i> INSTAGRAM</h2>
                 <p style="font-size: 1.5rem; margin-top: 30px;">Coming Soon</p>
                 <p class="channel-desc">Follow us soon on Instagram!</p>
             `;
@@ -86,7 +67,7 @@ function goToPage(page) {
         
         case 'modz':
             content = `
-                <h2>⬇️ MODZ DOWNLOAD</h2>
+                <h2><i class="fas fa-download"></i> MODZ DOWNLOAD</h2>
                 <p style="font-size: 1.5rem; margin-top: 30px;">Coming Soon</p>
                 <p class="channel-desc">Premium mods will be available soon!</p>
             `;
@@ -122,11 +103,6 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
-
-// Handle page reload
-window.addEventListener('beforeunload', (e) => {
-    // Optional: Add confirmation if needed
-});
 
 // Reload functionality
 function reloadPage() {
